@@ -20,7 +20,7 @@ body {
 	font-family: 'Libre Baskerville', sans-serif;
 	line-height: 1.88889;
 	color: white;
-	background-color: #000000d4;
+	background-color: #000000D4;
 	margin: 0;
 	padding: 0;
 }
@@ -61,7 +61,7 @@ abbr {
 
 /* specific divs */
 .page-wrapper {
-	padding: 20px 10% 20px 10%;
+	padding: 20px 5% 20px 5%;
 	margin: 0;
 	position: relative;
 	display: flex;
@@ -73,16 +73,18 @@ abbr {
 	flex-direction: column;
 }
 
+/* Aurora Background  */
 header {
 	font-family: 'Julius Sans One', sans-serif;
 	height: 300px;
 	width: 300px;
 	position: relative;
 	margin: auto;
+	margin-bottom: 20px;
   overflow: hidden;
 	border-radius: 100%;
 	border:9px solid black;
-	background: #f76009;
+	background: #F76009;
 	background: -moz-linear-gradient(left,  #f76009 7%, #04b6d6 33%, #ff0f43 65%, #408c54 93%);
 	background: -webkit-gradient(linear, left top, right top, color-stop(7%,#f76009), color-stop(33%,#04b6d6), color-stop(65%,#ff0f43), color-stop(93%,#408c54));
 	background: -webkit-linear-gradient(left,  #f76009 7%,#04b6d6 33%,#ff0f43 65%,#408c54 93%);
@@ -90,20 +92,25 @@ header {
 	background: -ms-linear-gradient(left,  #f76009 7%,#04b6d6 33%,#ff0f43 65%,#408c54 93%);
 	background: linear-gradient(10deg, #a1d9b4 20%, #32988a 40%, #000e3c 70%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f76009', endColorstr='#408c54',GradientType=1 );
+	background-image : url(http://www.script-tutorials.com/demos/360/images/stars.png), linear-gradient(10deg, #a1d9b4 20%, #32988a 40%, #000e3c 70%);
+	background-position: center;
 }
 
+/* Ground */
 header::before {
 	content: '';
 	position: absolute;
 	top: 150px;
-	width: 300px;
-	height: 150px;
+	left: 2px;
+	width: 295px;
+	height: 148px;
 	border-bottom-left-radius: 400px;
   border-bottom-right-radius: 400px;
 	background-color: #26152D;
 	z-index: 2;
 }
 
+/* Wispy Effect */
 header::after {
 	content: '';
   position:absolute;
@@ -137,27 +144,41 @@ header h1 {
 	z-index: 3;
 }
 
+/* Moon */
 header h1::before {
 	content: '';
   z-index: 1;
 	position:absolute;
 	top: 0%;
 	right: 0%;
-	-webkit-transform: translate(-50%, -225%);
-	transform: translate(-50%, -225%);
   width: 60px;
   height: 60px;
   border-radius: 100%;
   background: rgba(255,255,255,1);
-  box-shadow: 0 0 90px #FFf;
-	-moz-box-shadow: 0 0 90px #FFf;
-	-ms-box-shadow: 0 0 90px #FFf;
-	-o-box-shadow: 0 0 90px #FFf;
-	-webkit-box-shadow: 0 0 90px #FFf;
+  box-shadow: 0 0 50px #FFf;
+	-moz-box-shadow: 0 0 50px #FFF;
+	-ms-box-shadow: 0 0 50px #FFF;
+	-o-box-shadow: 0 0 50px #FFF;
+	-webkit-box-shadow: 0 0 50px #FFF;
 	animation: moon 10s linear infinite;
   -moz-animation: moon 10s linear infinite;
   -webkit-animation: moon 10s linear infinite;
 }
+
+/* Mountain */
+header h1::after {
+	content: '';
+	position: absolute;
+	top: -64px;
+	right: -12px;
+	height: 0;
+  width: 0;
+  border-bottom: 64px solid black;
+  border-left: 75px solid transparent;
+  border-right: 75px solid transparent;
+	z-index: 2;
+}
+
 header h2 {
 	position: absolute;
 	top: 60%;
@@ -172,50 +193,100 @@ header h2 {
 	z-index: 3;
 }
 
+/* Mountain */
+header h2::before {
+	content: '';
+	position: absolute;
+	bottom: 169%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	height: 0;
+  width: 0;
+  border-bottom: 40px solid #494848;
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+	z-index: 3;
+}
+
+/* Mountain */
+header h2::after {
+	content: '';
+	position: absolute;
+	bottom: 77px;
+	left: -25px;
+	height: 0;
+  width: 0;
+  border-bottom: 52px solid #2B2B2B;
+  border-left: 65px solid transparent;
+  border-right: 65px solid transparent;
+	z-index: 2;
+}
+
 @keyframes northern {
-  0% {
-    transform: rotate(35deg);
-  }
-
-  25% {
-    transform: rotate(20deg);
-  }
-
-  40% {
-    transform: rotate(-10deg);
-  }
-
-  60% {
-    transform: rotate(50deg);
-  }
-
-  85% {
-    transform: rotate(15deg);
-  }
-
-  100% {
-    transform: rotate(0deg);
-  }
+  0% {transform: rotate(35deg);}
+  25% {transform: rotate(20deg);}
+  40% {transform: rotate(-10deg);}
+  60% {transform: rotate(50deg);}
+  85% {transform: rotate(15deg);}
+  100% {transform: rotate(0deg);}
+}
+@-webkit-keyframes northern {
+  0% {transform: rotate(35deg);}
+  25% {transform: rotate(20deg);}
+  40% {transform: rotate(-10deg);}
+  60% {transform: rotate(50deg);}
+  85% {transform: rotate(15deg);}
+  100% {transform: rotate(0deg);}
+}
+@-moz-keyframes northern {
+  0% {transform: rotate(35deg);}
+  25% {transform: rotate(20deg);}
+  40% {transform: rotate(-10deg);}
+  60% {transform: rotate(50deg);}
+  85% {transform: rotate(15deg);}
+  100% {transform: rotate(0deg);}
+}
+@-ms-keyframes northern {
+  0% {transform: rotate(35deg);}
+  25% {transform: rotate(20deg);}
+  40% {transform: rotate(-10deg);}
+  60% {transform: rotate(50deg);}
+  85% {transform: rotate(15deg);}
+  100% {transform: rotate(0deg);}
 }
 
 @keyframes moon {
-  0% {
-    transform: translate(200%, -100%);
-  }
+  0% {transform: translate(200%, -100%);}
+  25% {transform: translate(0%, -150%);}
+  50% {transform: translate(-200%, -200%);}
+  75% {transform: translate(-400%, -150%);}
+  100% {transform: translate(-600%, -100%);}
+}
+@-webkit-keyframes moon {
+  0% {transform: translate(200%, -100%);}
+  25% {transform: translate(0%, -150%);}
+  50% {transform: translate(-200%, -200%);}
+  75% {transform: translate(-400%, -150%);}
+  100% {transform: translate(-600%, -100%);}
+}
+@-moz-keyframes moon {
+  0% {transform: translate(200%, -100%);}
+  25% {transform: translate(0%, -150%);}
+  50% {transform: translate(-200%, -200%);}
+  75% {transform: translate(-400%, -150%);}
+  100% {transform: translate(-600%, -100%);}
+}
+@-ms-keyframes moon {
+  0% {transform: translate(200%, -100%);}
+  25% {transform: translate(0%, -150%);}
+  50% {transform: translate(-200%, -200%);}
+  75% {transform: translate(-400%, -150%);}
+  100% {transform: translate(-600%, -100%);}
+}
 
-  25% {
-    transform: translate(0%, -150%);
-  }
-
-  50% {
-    transform: translate(-200%, -200%);
-  }
-
-  75% {
-    transform: translate(-400%, -150%);
-  }
-
-  100% {
-    transform: translate(-600%, -100%);
+@media screen and (max-width: 480px) {
+  header {
+		margin-left: -10px;
   }
 }
