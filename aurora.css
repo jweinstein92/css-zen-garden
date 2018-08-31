@@ -20,7 +20,7 @@ body {
 	font-family: 'Libre Baskerville', sans-serif;
 	line-height: 1.88889;
 	color: white;
-	background-color: #000000D4;
+	background-color: #2B2B2B;
 	margin: 0;
 	padding: 0;
 }
@@ -59,21 +59,23 @@ abbr {
 }
 
 
-/* specific divs */
+/* Aurora Background  */
 .page-wrapper {
 	padding: 20px 5% 20px 5%;
 	margin: 0;
 	position: relative;
 	display: flex;
 	flex-direction: column;
+	overflow: hidden;
 }
 
 .intro {
 	display: flex;
 	flex-direction: column;
+	position: relative;
 }
 
-/* Aurora Background  */
+/* Aurora Header */
 header {
 	font-family: 'Julius Sans One', sans-serif;
 	height: 300px;
@@ -114,20 +116,17 @@ header::before {
 header::after {
 	content: '';
   position:absolute;
-  width: 300px;
-  height: 300px;
-	border-radius: 100%;
-	background: -moz-linear-gradient(left,  rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.07) 25%, rgba(252,252,252,0.12) 50%, rgba(255,255,255,0.17) 75%, rgba(255,255,255,0.21) 100%);
-	background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,255,255,0.03)), color-stop(25%,rgba(255,255,255,0.07)), color-stop(50%,rgba(252,252,252,0.12)), color-stop(75%,rgba(255,255,255,0.17)), color-stop(100%,rgba(255,255,255,0.21)));
-	background: -webkit-linear-gradient(left,  rgba(255,255,255,0.03) 0%,rgba(255,255,255,0.07) 25%,rgba(252,252,252,0.12) 50%,rgba(255,255,255,0.17) 75%,rgba(255,255,255,0.21) 100%);
-	background: -o-linear-gradient(left,  rgba(255,255,255,0.03) 0%,rgba(255,255,255,0.07) 25%,rgba(252,252,252,0.12) 50%,rgba(255,255,255,0.17) 75%,rgba(255,255,255,0.21) 100%);
-	background: -ms-linear-gradient(left,  rgba(255,255,255,0.03) 0%,rgba(255,255,255,0.07) 25%,rgba(252,252,252,0.12) 50%,rgba(255,255,255,0.17) 75%,rgba(255,255,255,0.21) 100%);
-	background: linear-gradient(to right,  rgba(255,255,255,0.03) 0%,rgba(255,255,255,0.07) 25%,rgba(252,252,252,0.12) 50%,rgba(255,255,255,0.17) 75%,rgba(255,255,255,0.21) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1fffffff', endColorstr='#4dffffff',GradientType=1 );
+  width: 500px;
+  height: 500px;
+	border-radius: 43%;
+	background: -moz-linear-gradient(left, rgba(252,236,252,0.05) 0%, rgba(251,166,225,0.12) 50%, rgba(253,137,215,0.14) 51%, rgba(255,124,216,0.30) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(left, rgba(252,236,252,0.05) 0%,rgba(251,166,225,0.12) 50%,rgba(253,137,215,0.14) 51%,rgba(255,124,216,0.30) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to right, rgba(252,236,252,0.05) 0%,rgba(251,166,225,0.12) 50%,rgba(253,137,215,0.14) 51%,rgba(255,124,216,0.30) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0dfcecfc', endColorstr='#75ff7cd8',GradientType=1 ); /* IE6-9 */
   margin:0px auto;
-  animation: northern 3s linear infinite alternate;
-  -moz-animation: northern 3s linear infinite alternate;
-  -webkit-animation: northern 3s linear infinite alternate;
+  animation: northern 20s linear infinite;
+  -moz-animation: northern 20s linear infinite;
+  -webkit-animation: northern 20s linear infinite;
 }
 
 header h1 {
@@ -223,37 +222,23 @@ header h2::after {
 	z-index: 2;
 }
 
+/* Content */
+
 @keyframes northern {
-  0% {transform: rotate(35deg);}
-  25% {transform: rotate(20deg);}
-  40% {transform: rotate(-10deg);}
-  60% {transform: rotate(50deg);}
-  85% {transform: rotate(15deg);}
-  100% {transform: rotate(0deg);}
+	from { transform: rotate(0deg); }
+  from { transform: rotate(360deg); }
 }
 @-webkit-keyframes northern {
-  0% {transform: rotate(35deg);}
-  25% {transform: rotate(20deg);}
-  40% {transform: rotate(-10deg);}
-  60% {transform: rotate(50deg);}
-  85% {transform: rotate(15deg);}
-  100% {transform: rotate(0deg);}
+	from { transform: rotate(0deg); }
+  from { transform: rotate(360deg); }
 }
 @-moz-keyframes northern {
-  0% {transform: rotate(35deg);}
-  25% {transform: rotate(20deg);}
-  40% {transform: rotate(-10deg);}
-  60% {transform: rotate(50deg);}
-  85% {transform: rotate(15deg);}
-  100% {transform: rotate(0deg);}
+	from { transform: rotate(0deg); }
+  from { transform: rotate(360deg); }
 }
 @-ms-keyframes northern {
-  0% {transform: rotate(35deg);}
-  25% {transform: rotate(20deg);}
-  40% {transform: rotate(-10deg);}
-  60% {transform: rotate(50deg);}
-  85% {transform: rotate(15deg);}
-  100% {transform: rotate(0deg);}
+	from { transform: rotate(0deg); }
+  from { transform: rotate(360deg); }
 }
 
 @keyframes moon {
