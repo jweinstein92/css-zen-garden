@@ -16,13 +16,24 @@ html {
 }
 
 body {
-	font-size: 100%;
+	font-size: 12px;
 	font-family: 'Libre Baskerville', sans-serif;
 	line-height: 1.88889;
 	color: white;
-	background-color: #2B2B2B;
 	margin: 0;
 	padding: 0;
+}
+
+/* Page background */
+body::after {
+	content: '';
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: -2;
+	background-image: url(http://www.script-tutorials.com/demos/360/images/stars.png), linear-gradient(10deg, #a1c4d9 2%, #773298 10%, #000e3c 70%);
 }
 
 p {
@@ -31,10 +42,12 @@ p {
 }
 
 h3 {
-	font: italic normal 1.4em georgia, sans-serif;
+	font: bold normal 1.4em 'Julius Sans One', sans-serif;
 	letter-spacing: 1px;
-	margin-bottom: 0;
-	color: #7D775C;
+	margin-bottom: 15px;
+	color: white;
+	border-bottom: 1px solid white;
+	font-size: 18px;
 }
 
 a:link {
@@ -58,10 +71,8 @@ abbr {
 	border-bottom: none;
 }
 
-
-/* Aurora Background  */
 .page-wrapper {
-	padding: 20px 5% 20px 5%;
+	padding: 20px 15% 250px 15%;
 	margin: 0;
 	position: relative;
 	display: flex;
@@ -69,10 +80,27 @@ abbr {
 	overflow: hidden;
 }
 
+/* Bottom Trees */
+.page-wrapper::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 250px;
+	width: 100%;
+	z-index: -1;
+	background-image: url(https://i.pinimg.com/originals/ca/e8/6e/cae86e76225a25b17332dfc9cf8b1121.png);
+}
+
 .intro {
 	display: flex;
 	flex-direction: column;
 	position: relative;
+}
+
+.intro .summary p {
+	text-align: center;
+	font-size: 10px;
 }
 
 /* Aurora Header */
@@ -223,6 +251,28 @@ header h2::after {
 }
 
 /* Content */
+.main > div {
+	padding-top: 5px;
+}
+
+.sidebar {
+	margin: 20px 0;
+}
+
+.sidebar .wrapper {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.sidebar ul {
+	margin: 0;
+	padding: 0;
+}
+
+.sidebar li {
+	list-style-type: none;
+}
 
 @keyframes northern {
 	from { transform: rotate(0deg); }
@@ -270,8 +320,8 @@ header h2::after {
   100% {transform: translate(-600%, -100%);}
 }
 
-@media screen and (max-width: 480px) {
-  header {
-		margin-left: -10px;
-  }
+@media screen and (max-width: 768px) {
+  .sidebar .wrapper {
+		display: block;
+	}
 }
